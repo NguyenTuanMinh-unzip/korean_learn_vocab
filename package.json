@@ -1,0 +1,32 @@
+{
+  "name": "korean-vocab-app",
+  "version": "1.0.0",
+  "description": "Korean vocabulary learning app with spaced repetition",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "cd korean-vocab-app && npm start",
+    "build": "cd korean-vocab-app && npm run build",
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd korean-vocab-app && npm install && npm run build"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^7.8.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
+  }
+}
